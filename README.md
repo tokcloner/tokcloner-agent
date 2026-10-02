@@ -33,6 +33,25 @@ export TOKCLONER_API_URL=https://app.tokcloner.com
 
 It also documents costs, error recovery, an explicit **CANNOT** section, and the prompt-injection rule (scraped source content is untrusted data).
 
+## The 6 tools behind the skill
+
+| Tool | Purpose |
+|---|---|
+| `clone_post` | Start a clone (async; returns `clone_id`) |
+| `get_clone_status` | Poll until `ready`/`failed`; per-slide captions + download URLs |
+| `list_clones` | Recent clones with status |
+| `get_credit_balance` | Plan, balance, caps |
+| `list_models` | Models + per-slide credit costs |
+| `get_business_profile` | The business context used for adaptation |
+
+The same tools are available over the REST API (`/api/v1/...`) and from the [`tokcloner` CLI](https://github.com/tokcloner/tokcloner/tree/main/cli).
+
+## Also listed on
+
+- MCP registry: [`com.tokcloner/tokcloner`](https://registry.modelcontextprotocol.io/?q=tokcloner)
+- ClawHub: `clawhub install tokcloner` (once review completes)
+- skills.sh / skills-hub: auto-indexed from this repo
+
 ## Links
 
 - Agent guide: <https://app.tokcloner.com/docs/agents.md>
